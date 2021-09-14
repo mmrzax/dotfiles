@@ -28,7 +28,6 @@ set ignorecase " Always case-insensitive
 set incsearch " Searches for strings incrementally
 set nowrap " Disable line wrap
 set background=dark
-"set clipboard=unnamedplus
 set cmdheight=2
 set noshowmode
 set updatetime=50
@@ -126,7 +125,7 @@ nnoremap <leader>o :Files<CR>
 
 " LIGHTLINE CONFIG
 let g:lightline = {
-      \ 'colorscheme': 'ayu_dark',
+      \ 'colorscheme': 'powerlineish',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'absolutepath', 'modified' ] ]
@@ -146,7 +145,7 @@ let g:lightline.separator = {
 let g:lightline.subseparator = {
 	\   'left': '', 'right': '' 
   \}
-" Uncomment these lines and uninstall buftabline plugin to using lightabline
+" Uncomment these lines and disable buftabline to using lightabline
 "let g:lightline.tabline = {
   "\   'left': [ ['tabs'] ],
   "\   'right': [ ['close'] ]
@@ -162,10 +161,10 @@ function! MyFileformat()
 endfunction
 
 " THEME CONFIG
-"let g:gruvbox_contrast_dark = 'hard'
-"autocmd vimenter * ++nested colorscheme gruvbox
-let ayucolor="dark"
-colorscheme ayu
+let g:gruvbox_contrast_dark = 'hard'
+autocmd vimenter * ++nested colorscheme gruvbox
+"let ayucolor="dark"
+"colorscheme ayu
 
 " INDENT-LINE CONFIG (replace your favorite character with c)
 "let g:indentLine_char = 'c'
