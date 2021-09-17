@@ -2,6 +2,7 @@ call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
 Plug 'morhetz/gruvbox'
 Plug 'ayu-theme/ayu-vim'
+Plug 'arcticicestudio/nord-vim'
 Plug 'ap/vim-buftabline'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-fugitive'
@@ -29,6 +30,7 @@ set incsearch " Searches for strings incrementally
 set nowrap " Disable line wrap
 set background=dark
 set cmdheight=2
+set cursorline
 set noshowmode
 set updatetime=50
 set noerrorbells " Disable Beep or flash screen on errors
@@ -163,8 +165,15 @@ endfunction
 " THEME CONFIG
 let g:gruvbox_contrast_dark = 'hard'
 autocmd vimenter * ++nested colorscheme gruvbox
+
 "let ayucolor="dark"
 "colorscheme ayu
+
+"let g:nord_italic_comments = 1
+"let g:nord_italic = 1
+"let g:nord_bold_vertical_split_line = 1
+"let g:nord_cursor_line_number_background = 1
+"colorscheme nord
 
 " INDENT-LINE CONFIG (replace your favorite character with c)
 "let g:indentLine_char = 'c'
