@@ -25,19 +25,19 @@ scrolling:
 
 font:
   normal:
-    family: SauceCodePro Nerd Font
+    family: Hack Nerd Font
     style: Regular
 
   bold:
-    family: SauceCodePro Nerd Font
+    family: Hack Nerd Font
     style: Bold
 
   italic:
-    family: SauceCodePro Nerd Font
+    family: Hack Nerd Font
     style: Italic
 
   bold_italic:
-    family: SauceCodePro Nerd Font
+    family: Hack Nerd Font
     style: Bold Italic
 
   size: 10
@@ -52,54 +52,90 @@ font:
 
 draw_bold_text_with_bright_colors: true
 
-# Colors (GruvBox)
+# Colors (Night Owl)
 colors:
+   # Default colors
   primary:
-    background: '#1d2021'
-    foreground: '#ebdbb2'
-    bright_foreground: '#fbf1c7'
-    dim_foreground: '#a89984'
+    background: '#011627'
+    foreground: '#d6deeb'
 
   cursor:
-    text: CellBackground 
-    cursor: CellForeground 
-    vi_mode_cursor:
-    text: CellBackground 
-    cursor: CellForeground 
+    text: '#011627'
+    cursor: '#d6deeb'
 
   selection:
-    text: CellBackground
-    background: CellForeground
+    background: '#1b90dd'
 
+   # Normal colors
   normal:
-    black:   '#1d2021'
-    red:     '#cc241d'
-    green:   '#98971a'
-    yellow:  '#d79921'
-    blue:    '#458588'
-    magenta: '#b16286'
-    cyan:    '#689d6a'
-    white:   '#a89984'
+    black:   '#011627'
+    red:     '#ef5350'
+    green:   '#22da6e'
+    yellow:  '#c5e478'
+    blue:    '#82aaff'
+    magenta: '#c792ea'
+    cyan:    '#21c7a8'
+    white:   '#ffffff'
 
+   # Bright colors
   bright:
-    black:   '#928374'
-    red:     '#fb4934'
-    green:   '#b8bb26'
-    yellow:  '#fabd2f'
-    blue:    '#83a598'
-    magenta: '#d3869b'
-    cyan:    '#8ec07c'
-    white:   '#ebdbb2'
+    black:   '#575656'
+    red:     '#ef5350'
+    green:   '#22da6e'
+    yellow:  '#ffeb95'
+    blue:    '#82aaff'
+    magenta: '#c792ea'
+    cyan:    '#7fdbca'
+    white:   '#ffffff'
 
-  dim:
-    black:   '#32302f'
-    red:     '#9d0006'
-    green:   '#79740e'
-    yellow:  '#b57614'
-    blue:    '#076678'
-    magenta: '#8f3f71'
-    cyan:    '#427b58'
-    white:   '#928374'
+# Colors (GruvBox)
+#colors:
+  #primary:
+    #background: '#1d2021'
+    #foreground: '#ebdbb2'
+    #bright_foreground: '#fbf1c7'
+    #dim_foreground: '#a89984'
+
+  #cursor:
+    #text: CellBackground 
+    #cursor: CellForeground 
+    #vi_mode_cursor:
+    #text: CellBackground 
+    #cursor: CellForeground 
+
+  #selection:
+    #text: CellBackground
+    #background: CellForeground
+
+  #normal:
+    #black:   '#1d2021'
+    #red:     '#cc241d'
+    #green:   '#98971a'
+    #yellow:  '#d79921'
+    #blue:    '#458588'
+    #magenta: '#b16286'
+    #cyan:    '#689d6a'
+    #white:   '#a89984'
+
+  #bright:
+    #black:   '#928374'
+    #red:     '#fb4934'
+    #green:   '#b8bb26'
+    #yellow:  '#fabd2f'
+    #blue:    '#83a598'
+    #magenta: '#d3869b'
+    #cyan:    '#8ec07c'
+    #white:   '#ebdbb2'
+
+  #dim:
+    #black:   '#32302f'
+    #red:     '#9d0006'
+    #green:   '#79740e'
+    #yellow:  '#b57614'
+    #blue:    '#076678'
+    #magenta: '#8f3f71'
+    #cyan:    '#427b58'
+    #white:   '#928374'
 
   indexed_colors: []
 
