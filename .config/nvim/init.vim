@@ -1,6 +1,7 @@
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
 Plug 'morhetz/gruvbox'
+Plug 'mangeshrex/uwu.vim'
 Plug 'ayu-theme/ayu-vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'ap/vim-buftabline'
@@ -29,7 +30,7 @@ set ignorecase " Always case-insensitive
 set incsearch " Searches for strings incrementally
 set nowrap " Disable line wrap
 set background=dark
-set cmdheight=2
+set cmdheight=1
 set cursorline
 set noshowmode
 set updatetime=50
@@ -61,7 +62,7 @@ set softtabstop=2 " Number of spaces per Tab
 
 " COC.NVIM CONFIG
 " ****************************************************************************************************
-let g:coc_node_path = '/home/mmrza/.nvm/versions/node/v14.17.6/bin/node' " Nodejs path for coc-nvim
+let g:coc_node_path = '/home/mmrza/.nvm/versions/node/v14.18.0/bin/node' " Nodejs path for coc-nvim
 set shortmess+=c " " Don't pass messages to ins-completion-menu
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
@@ -127,7 +128,7 @@ nnoremap <leader>o :Files<CR>
 
 " LIGHTLINE CONFIG
 let g:lightline = {
-      \ 'colorscheme': 'powerlineish',
+      \ 'colorscheme': 'molokai',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'absolutepath', 'modified' ] ]
@@ -163,8 +164,8 @@ function! MyFileformat()
 endfunction
 
 " THEME CONFIG
-let g:gruvbox_contrast_dark = 'hard'
-autocmd vimenter * ++nested colorscheme gruvbox
+"let g:gruvbox_contrast_dark = 'hard'
+"autocmd vimenter * ++nested colorscheme gruvbox
 
 "let ayucolor="dark"
 "colorscheme ayu
@@ -175,8 +176,10 @@ autocmd vimenter * ++nested colorscheme gruvbox
 "let g:nord_cursor_line_number_background = 1
 "colorscheme nord
 
+colorscheme uwu
+
 " INDENT-LINE CONFIG (replace your favorite character with c)
-"let g:indentLine_char = 'c'
+let g:indentLine_char = '│'
 
 " FIX TERMINAL COLORS
 if (empty($TMUX))
