@@ -128,7 +128,7 @@ nnoremap <leader>o :Files<CR>
 
 " LIGHTLINE CONFIG
 let g:lightline = {
-      \ 'colorscheme': 'molokai',
+      \ 'colorscheme': 'ayu_dark',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'absolutepath', 'modified' ] ]
@@ -167,8 +167,8 @@ endfunction
 "let g:gruvbox_contrast_dark = 'hard'
 "autocmd vimenter * ++nested colorscheme gruvbox
 
-"let ayucolor="dark"
-"colorscheme ayu
+let ayucolor="dark"
+colorscheme ayu
 
 "let g:nord_italic_comments = 1
 "let g:nord_italic = 1
@@ -176,7 +176,7 @@ endfunction
 "let g:nord_cursor_line_number_background = 1
 "colorscheme nord
 
-colorscheme uwu
+"colorscheme uwu
 
 " INDENT-LINE CONFIG (replace your favorite character with c)
 let g:indentLine_char = '│'
