@@ -121,8 +121,9 @@ export FZF_DEFAULT_COMMAND='rg --files --follow --hidden'
 alias mw="cd ~/Documents/NodeJS/Projects"
 alias mnr="systemctl restart NetworkManager"
 alias bclash="brave-browser --proxy-server=127.0.0.1:7890"
-alias mongo="/home/mmrza/mongodb/bin/mongod --dbpath=/home/mmrza/mongodb-data"
+alias mongo="~/mongodb/bin/mongod --dbpath=/home/mmrza/mongodb-data"
 alias d="aria2c"
+alias postman="~/Documents/Apps/Postman/Postman"
 
 # NVM Config
 export NVM_DIR="$HOME/.nvm"

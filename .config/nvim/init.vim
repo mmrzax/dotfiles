@@ -21,6 +21,7 @@ call plug#end()
 syntax on
 set encoding=UTF-8
 set number " Show line numbers
+set relativenumber
 set noswapfile " Disable swap file
 set nohlsearch " Disable highlight all search results
 set nobackup
@@ -44,7 +45,7 @@ nnoremap <leader>zsh :vi ~/.zshrc<CR>
 nnoremap <leader>` :terminal<CR>
 nnoremap <C-s> :w<CR>
 nnoremap <C-c> :bd<CR>
-nnoremap <C-c>jj :q<CR>
+nnoremap <C-c>jj :bd!<CR>
 
 " Paste Configuration
 inoremap <C-p>j <C-r>"
@@ -62,7 +63,7 @@ set softtabstop=2 " Number of spaces per Tab
 
 " COC.NVIM CONFIG
 " ****************************************************************************************************
-let g:coc_node_path = '/home/mmrza/.nvm/versions/node/v14.18.0/bin/node' " Nodejs path for coc-nvim
+let g:coc_node_path = '/home/mmrza/.nvm/versions/node/v16.13.0/bin/node' " Nodejs path for coc-nvim
 set shortmess+=c " " Don't pass messages to ins-completion-menu
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
@@ -101,6 +102,15 @@ command! -nargs=0 Prettier :CocCommand prettier.formatFile
 nnoremap <leader>f :CocCommand prettier.formatFile<CR>
 vmap <leader>ff  <Plug>(coc-format-selected)
 nmap <leader>ff  <Plug>(coc-format-selected)
+" Use K to show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
 
 " **************************************************************************************************
 
@@ -128,7 +138,7 @@ nnoremap <leader>o :Files<CR>
 
 " LIGHTLINE CONFIG
 let g:lightline = {
-      \ 'colorscheme': 'ayu_dark',
+      \ 'colorscheme': 'powerlineish',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'absolutepath', 'modified' ] ]
@@ -167,8 +177,8 @@ endfunction
 "let g:gruvbox_contrast_dark = 'hard'
 "autocmd vimenter * ++nested colorscheme gruvbox
 
-let ayucolor="dark"
-colorscheme ayu
+"let ayucolor="dark"
+"colorscheme ayu
 
 "let g:nord_italic_comments = 1
 "let g:nord_italic = 1
@@ -176,7 +186,7 @@ colorscheme ayu
 "let g:nord_cursor_line_number_background = 1
 "colorscheme nord
 
-"colorscheme uwu
+colorscheme uwu
 
 " INDENT-LINE CONFIG (replace your favorite character with c)
 let g:indentLine_char = '│'

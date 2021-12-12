@@ -7,11 +7,11 @@ window:
     columns: 80
     lines: 24
 
-  padding:
-    x: 0 #10
-    y: 0 #10
+  #padding:
+    #x: 0 #10
+    #y: 0 #10
 
-  dynamic_padding: false
+  dynamic_padding: true
 
   decorations: full
 
@@ -40,7 +40,7 @@ font:
     family: UbuntuMono Nerd Font
     style: Bold Italic
 
-  size: 12
+  size: 14
 
   offset:
     x: 0
