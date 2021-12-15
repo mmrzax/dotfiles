@@ -124,8 +124,12 @@ alias bclash="brave-browser --proxy-server=127.0.0.1:7890"
 alias mongo="~/mongodb/bin/mongod --dbpath=/home/mmrza/mongodb-data"
 alias d="aria2c"
 alias postman="~/Documents/Apps/Postman/Postman"
+alias mmw="cd ~/Documents/task-manager && vi"
 
 # NVM Config
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Terminal
+#export TERM="xterm-256color"

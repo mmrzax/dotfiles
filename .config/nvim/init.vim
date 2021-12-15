@@ -11,7 +11,7 @@ Plug 'preservim/nerdcommenter'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
-Plug 'Yggdroot/indentLine'
+"Plug 'Yggdroot/indentLine'
 Plug 'preservim/nerdtree' |
             \ Plug 'Xuyuanp/nerdtree-git-plugin' |
             \ Plug 'ryanoasis/vim-devicons'
@@ -50,6 +50,12 @@ nnoremap <C-c>jj :bd!<CR>
 " Paste Configuration
 inoremap <C-p>j <C-r>"
 inoremap <C-p>k <C-r>*
+
+" Moving Between Windows
+map <leader>h :wincmd h<CR>
+map <leader>j :wincmd j<CR>
+map <leader>k :wincmd k<CR>
+map <leader>l :wincmd l<CR>
 
 " INDENT CONFIG
 filetype plugin indent on
@@ -116,7 +122,7 @@ endfunction
 
 " NERDTREE CONFIG
 " Mirror the NERDTree before showing it this makes it the same on all tabs
-nnoremap <leader>n :NERDTreeMirror<CR>:NERDTreeFocus<CR>
+"nnoremap <leader>n :NERDTreeMirror<CR>:NERDTreeFocus<CR>
 nnoremap <leader>nn :NERDTreeToggle<CR>
 "let g:NERDTreeDirArrowExpandable = ''
 "let g:NERDTreeDirArrowCollapsible = ''
@@ -174,8 +180,8 @@ function! MyFileformat()
 endfunction
 
 " THEME CONFIG
-"let g:gruvbox_contrast_dark = 'hard'
-"autocmd vimenter * ++nested colorscheme gruvbox
+let g:gruvbox_contrast_dark = 'hard'
+autocmd vimenter * ++nested colorscheme gruvbox
 
 "let ayucolor="dark"
 "colorscheme ayu
@@ -186,10 +192,11 @@ endfunction
 "let g:nord_cursor_line_number_background = 1
 "colorscheme nord
 
-colorscheme uwu
+"colorscheme uwu
 
 " INDENT-LINE CONFIG (replace your favorite character with c)
-let g:indentLine_char = '│'
+"let g:indentLine_char = '│'
+"let g:indentLine_char = '▏'
 
 " FIX TERMINAL COLORS
 if (empty($TMUX))
@@ -203,5 +210,5 @@ endif
 
 " BUFTABLINE SETUP
 set hidden
-nnoremap <C-n> :bnext<CR>
-"nnoremap <C-p> :bprev<CR>
+nnoremap <C-l> :bnext<CR>
+nnoremap <C-h> :bprev<CR>
