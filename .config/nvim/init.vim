@@ -1,8 +1,8 @@
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
-Plug 'morhetz/gruvbox'
-Plug 'mangeshrex/uwu.vim'
-Plug 'ayu-theme/ayu-vim'
+"Plug 'morhetz/gruvbox'
+"Plug 'mangeshrex/uwu.vim'
+"Plug 'ayu-theme/ayu-vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'ap/vim-buftabline'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -124,8 +124,6 @@ endfunction
 " Mirror the NERDTree before showing it this makes it the same on all tabs
 "nnoremap <leader>n :NERDTreeMirror<CR>:NERDTreeFocus<CR>
 nnoremap <leader>nn :NERDTreeToggle<CR>
-"let g:NERDTreeDirArrowExpandable = ''
-"let g:NERDTreeDirArrowCollapsible = ''
 " If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
 autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
     \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
@@ -144,7 +142,7 @@ nnoremap <leader>o :Files<CR>
 
 " LIGHTLINE CONFIG
 let g:lightline = {
-      \ 'colorscheme': 'powerlineish',
+      \ 'colorscheme': 'nord',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'absolutepath', 'modified' ] ]
@@ -180,17 +178,20 @@ function! MyFileformat()
 endfunction
 
 " THEME CONFIG
-let g:gruvbox_contrast_dark = 'hard'
-autocmd vimenter * ++nested colorscheme gruvbox
+"let g:gruvbox_contrast_dark = 'hard'
+"autocmd vimenter * ++nested colorscheme gruvbox
 
 "let ayucolor="dark"
 "colorscheme ayu
 
-"let g:nord_italic_comments = 1
-"let g:nord_italic = 1
-"let g:nord_bold_vertical_split_line = 1
-"let g:nord_cursor_line_number_background = 1
-"colorscheme nord
+let g:nord_italic_comments = 1
+let g:nord_italic = 1
+let g:nord_underline = 1
+let g:nord_bold_vertical_split_line = 1
+let g:nord_cursor_line_number_background = 1
+let g:nord_uniform_status_lines = 1
+let g:nord_uniform_diff_background = 1
+colorscheme nord
 
 "colorscheme uwu
 
