@@ -115,7 +115,8 @@ source $ZSH/oh-my-zsh.sh
 export NODE_PATH=`which node`
 
 # Using Ripgrep for listing the files (by using fzf in nvim)
-export FZF_DEFAULT_COMMAND='rg --files --follow --hidden'
+export FZF_DEFAULT_COMMAND="rg --files --follow --hidden -g '!node_modules' -g '!dist/' -g '!.git'"
+#export FZF_DEFAULT_COMMAND='rg --files --follow --hidden'
 
 # ALIAS
 alias mw="cd ~/Documents/NodeJS/Projects"
