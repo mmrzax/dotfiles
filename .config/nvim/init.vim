@@ -1,24 +1,30 @@
+" ********************************** Plugins
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
-"Plug 'morhetz/gruvbox'
+Plug 'morhetz/gruvbox'
 "Plug 'mangeshrex/uwu.vim'
 "Plug 'ayu-theme/ayu-vim'
-Plug 'arcticicestudio/nord-vim'
-Plug 'ap/vim-buftabline'
+"Plug 'arcticicestudio/nord-vim'
+"Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+"Plug 'ap/vim-buftabline'
+Plug 'mengelbrecht/lightline-bufferline'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-fugitive'
 Plug 'preservim/nerdcommenter'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
-"Plug 'Yggdroot/indentLine'
+Plug 'Yggdroot/indentLine'
 Plug 'preservim/nerdtree' |
             \ Plug 'Xuyuanp/nerdtree-git-plugin' |
             \ Plug 'ryanoasis/vim-devicons'
             
 call plug#end()
 
+" ********************************** Settings
 syntax on
+set hidden
 set encoding=UTF-8
 set number " Show line numbers
 set relativenumber
@@ -33,10 +39,12 @@ set nowrap " Disable line wrap
 set background=dark
 set cmdheight=1
 set cursorline
+"set cursorcolumn
 set noshowmode
 set updatetime=50
 set noerrorbells " Disable Beep or flash screen on errors
 set visualbell " Use visual bell (no beeping)
+set showtabline=2  " Show tabline
 let mapleader = " "
 inoremap jk <ESC>
 tnoremap jk <C-\><C-n> 
@@ -47,7 +55,8 @@ nnoremap <C-s> :w<CR>
 nnoremap <C-c> :bd<CR>
 nnoremap <C-c>jj :bd!<CR>
 
-" Paste Configuration
+" ********************************** Keymaps
+" Paste Keymaps
 inoremap <C-p>j <C-r>"
 inoremap <C-p>k <C-r>*
 
@@ -57,7 +66,10 @@ map <leader>j :wincmd j<CR>
 map <leader>k :wincmd k<CR>
 map <leader>l :wincmd l<CR>
 
-" INDENT CONFIG
+" Moving Between Buffers
+nnoremap <C-l> :bnext<CR>
+nnoremap <C-h> :bprev<CR>
+" ********************************** Indent Configuration
 filetype plugin indent on
 set autoindent " Auto-indent new lines
 set smartindent " Enable smart-indent
@@ -67,9 +79,9 @@ set shiftwidth=2 " When indenting with '>', use 2 spaces width
 set tabstop=2 " Show existing tab with 2 spaces width
 set softtabstop=2 " Number of spaces per Tab
 
-" COC.NVIM CONFIG
-" ****************************************************************************************************
+" ********************************** Coc.Nvim
 let g:coc_node_path = '/home/mmrza/.nvm/versions/node/v16.13.0/bin/node' " Nodejs path for coc-nvim
+let g:coc_global_extensions = ['coc-prettier', 'coc-html', 'coc-eslint', 'coc-yaml', 'coc-tsserver', 'coc-json']
 set shortmess+=c " " Don't pass messages to ins-completion-menu
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
@@ -103,11 +115,6 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
 autocmd CursorHold * silent call CocActionAsync('highlight')
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
-" COC.PRETTIER CONFIG
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
-nnoremap <leader>f :CocCommand prettier.formatFile<CR>
-vmap <leader>ff  <Plug>(coc-format-selected)
-nmap <leader>ff  <Plug>(coc-format-selected)
 " Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 function! s:show_documentation()
@@ -118,43 +125,93 @@ function! s:show_documentation()
   endif
 endfunction
 
-" **************************************************************************************************
+" ********************************** Coc.Prettier
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+nnoremap <leader>f :CocCommand prettier.formatFile<CR>
+vmap <leader>ff  <Plug>(coc-format-selected)
+nmap <leader>ff  <Plug>(coc-format-selected)
 
-" NERDTREE CONFIG
+" ********************************** NerdTree
 " Mirror the NERDTree before showing it this makes it the same on all tabs
 "nnoremap <leader>n :NERDTreeMirror<CR>:NERDTreeFocus<CR>
 nnoremap <leader>nn :NERDTreeToggle<CR>
+
 " If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
 autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
     \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
 
-" NERTTREE_GIT_STATUS CONFIG
+" Close NERDTree when closing the last buffer
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" ********************************** NerdTree Git Status
 let g:NERDTreeGitStatusUseNerdFonts = 1
-let g:NERDTreeGitStatusWithFlags = 1
+"let g:NERDTreeGitStatusWithFlags = 1
 "let g:NERDTreeGitStatusShowClean = 1
 
-" NERDCOMMENTER CONFIG
+" ********************************** Nerd Commenter
 let g:NERDCreateDefaultMappings = 1
 
+" ********************************** ColorSchemes
+let g:gruvbox_improved_warnings=1
+let g:gruvbox_italicize_comments=1
+let g:gruvbox_underline=1
+let g:gruvbox_bold=1
+let g:gruvbox_italic=1
+let g:gruvbox_contrast_dark = 'hard'
+colorscheme gruvbox
+"autocmd vimenter * ++nested colorscheme gruvbox
 
-" FZF CONFIG
+"let ayucolor="dark"
+"colorscheme ayu
+
+"let g:nord_italic_comments = 1
+"let g:nord_italic = 1
+"let g:nord_underline = 1
+"let g:nord_bold_vertical_split_line = 1
+"let g:nord_cursor_line_number_background = 1
+"let g:nord_uniform_status_lines = 1
+"let g:nord_uniform_diff_background = 1
+"colorscheme nord
+
+"colorscheme uwu
+
+" ********************************** FZF
 nnoremap <leader>o :Files<CR>
+nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>gh :History<CR>
+nnoremap <leader>df :Commits<CR>
+nnoremap <C-p> :FZF<CR>
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-s': 'split',
+  \ 'ctrl-v': 'vsplit'
+  \}
 
-" LIGHTLINE CONFIG
+" ********************************** Lightline
 let g:lightline = {
-      \ 'colorscheme': 'nord',
+      \ 'colorscheme': 'gruvbox',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'absolutepath', 'modified' ] ]
       \ },
       \ 'component': {
-      \   'lineinfo': ' %3l:%-2v', 
+      \   'lineinfo': '%3l:%-2v', 
       \ },
       \ 'component_function': {
       \   'gitbranch': 'FugitiveHead',
       \   'filetype': 'MyFiletype',
       \   'fileformat': 'MyFileformat',
       \ },
+      \ 'tabline': {
+      \   'left': [ ['buffers'] ],
+      \   'right': [ ['close'] ]
+      \ },
+      \ 'component_expand': {
+      \   'buffers': 'lightline#bufferline#buffers'
+      \ },
+      \ 'component_type': {
+      \   'buffers': 'tabsel'
+      \ }
       \ }
 let g:lightline.separator = {
 	\   'left': '', 'right': ''
@@ -162,13 +219,12 @@ let g:lightline.separator = {
 let g:lightline.subseparator = {
 	\   'left': '', 'right': '' 
   \}
-" Uncomment these lines and disable buftabline to using lightabline
-"let g:lightline.tabline = {
-  "\   'left': [ ['tabs'] ],
-  "\   'right': [ ['close'] ]
-  "\ }
-"set showtabline=2  " Show tabline
-"set guioptions-=e  " Don't use GUI tabline
+
+" ********************************** Lightline-BufferLine
+let g:lightline#bufferline#enable_devicons=1
+let g:lightline#bufferline#unicode_symbols=1
+let g:lightline#bufferline#icon_position='first'
+let g:lightline#bufferline#unicode_symbols=1
 " Functions for using nerdfont icons in the lightline
 function! MyFiletype()
   return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
@@ -177,29 +233,14 @@ function! MyFileformat()
   return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
 endfunction
 
-" THEME CONFIG
-"let g:gruvbox_contrast_dark = 'hard'
-"autocmd vimenter * ++nested colorscheme gruvbox
-
-"let ayucolor="dark"
-"colorscheme ayu
-
-let g:nord_italic_comments = 1
-let g:nord_italic = 1
-let g:nord_underline = 1
-let g:nord_bold_vertical_split_line = 1
-let g:nord_cursor_line_number_background = 1
-let g:nord_uniform_status_lines = 1
-let g:nord_uniform_diff_background = 1
-colorscheme nord
-
-"colorscheme uwu
-
-" INDENT-LINE CONFIG (replace your favorite character with c)
+" ********************************** IndentLine Guides
+"let g:indentLine_enabled = 0
+"let g:indentLine_char = '|'
 "let g:indentLine_char = '│'
-"let g:indentLine_char = '▏'
+let g:indentLine_char = '▏'
 
-" FIX TERMINAL COLORS
+" ********************************** Other Configs
+" Fix Terminal Colors
 if (empty($TMUX))
   if (has("nvim"))
     let $NVIM_TUI_ENABLE_TRUE_COLOR=1
@@ -208,8 +249,3 @@ if (empty($TMUX))
     set termguicolors
   endif
 endif
-
-" BUFTABLINE SETUP
-set hidden
-nnoremap <C-l> :bnext<CR>
-nnoremap <C-h> :bprev<CR>
