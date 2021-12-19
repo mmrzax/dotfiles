@@ -1,5 +1,13 @@
 {
+  "diagnostic.displayByAle": false,
+  "diagnostic.warningSign": "⚡",
+  "diagnostic.errorSign": "❌",
+  "diagnostic.hintSign": "💡",
+  "diagnostic.infoSign": "⚠️",
+  "diagnostic.enable": true,
+  "prettier.eslintIntegration": true,
   "prettier.tabWidth": 2,
+  "diagnostic.refreshOnInsertMode": true,
   "prettier.singleQuote": true,
   "prettier.trailingComma": "all",
   "prettier.bracketSpacing": true,
