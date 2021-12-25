@@ -126,6 +126,8 @@ alias mongo="~/mongodb/bin/mongod --dbpath=/home/mmrza/mongodb-data"
 alias d="aria2c"
 alias postman="~/Documents/Apps/Postman/Postman"
 alias mmw="cd ~/Documents/task-manager && vi"
+alias jk="musikcube"
+alias chrome="google-chrome-stable --proxy-server=127.0.0.1:7890"
 
 # NVM Config
 export NVM_DIR="$HOME/.nvm"
