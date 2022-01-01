@@ -119,7 +119,7 @@ export FZF_DEFAULT_COMMAND="rg --files --follow --hidden -g '!node_modules' -g '
 #export FZF_DEFAULT_COMMAND='rg --files --follow --hidden'
 
 # ALIAS
-alias mw="cd ~/Documents/NodeJS/Projects"
+alias mw="cd ~/Documents/GitHub/Repo"
 alias mnr="systemctl restart NetworkManager"
 alias bclash="brave-browser --proxy-server=127.0.0.1:7890"
 alias mongo="~/mongodb/bin/mongod --dbpath=/home/mmrza/mongodb-data"

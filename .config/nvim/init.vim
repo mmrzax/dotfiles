@@ -1,7 +1,8 @@
 " ********************************** Plugins
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
-Plug 'morhetz/gruvbox'
+"Plug 'morhetz/gruvbox'
+Plug 'sainnhe/gruvbox-material'
 "Plug 'mangeshrex/uwu.vim'
 "Plug 'ayu-theme/ayu-vim'
 "Plug 'arcticicestudio/nord-vim'
@@ -152,13 +153,13 @@ let g:NERDTreeGitStatusUseNerdFonts = 1
 let g:NERDCreateDefaultMappings = 1
 
 " ********************************** ColorSchemes
-let g:gruvbox_improved_warnings=1
-let g:gruvbox_italicize_comments=1
-let g:gruvbox_underline=1
-let g:gruvbox_bold=1
-let g:gruvbox_italic=1
-let g:gruvbox_contrast_dark = 'hard'
-colorscheme gruvbox
+"let g:gruvbox_improved_warnings=1
+"let g:gruvbox_italicize_comments=1
+"let g:gruvbox_underline=1
+"let g:gruvbox_bold=1
+"let g:gruvbox_italic=1
+"let g:gruvbox_contrast_dark = 'hard'
+"colorscheme gruvbox
 "autocmd vimenter * ++nested colorscheme gruvbox
 
 "let ayucolor="dark"
@@ -175,6 +176,13 @@ colorscheme gruvbox
 
 "colorscheme uwu
 
+let g:gruvbox_material_background = 'hard'
+let g:gruvbox_material_enable_italic = 1
+let g:gruvbox_material_background = 'hard'
+let g:gruvbox_material_enable_bold = 1
+let g:gruvbox_material_sign_column_background = 'none'
+colorscheme gruvbox-material
+
 " ********************************** FZF
 nnoremap <leader>o :Files<CR>
 nnoremap <leader>b :Buffers<CR>
@@ -189,7 +197,7 @@ let g:fzf_action = {
 
 " ********************************** Lightline
 let g:lightline = {
-      \ 'colorscheme': 'gruvbox',
+      \ 'colorscheme': 'gruvbox_material',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'absolutepath', 'modified' ] ]
