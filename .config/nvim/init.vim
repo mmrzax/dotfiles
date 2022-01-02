@@ -10,16 +10,17 @@ Plug 'sainnhe/gruvbox-material'
 "Plug 'ap/vim-buftabline'
 Plug 'mengelbrecht/lightline-bufferline'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'jiangmiao/auto-pairs'
+"Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-fugitive'
 Plug 'preservim/nerdcommenter'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'Yggdroot/indentLine'
-Plug 'preservim/nerdtree' |
-            \ Plug 'Xuyuanp/nerdtree-git-plugin' |
-            \ Plug 'ryanoasis/vim-devicons'
+Plug 'ryanoasis/vim-devicons'
+"Plug 'preservim/nerdtree' |
+            "\ Plug 'Xuyuanp/nerdtree-git-plugin' |
+            "\ Plug 'ryanoasis/vim-devicons'
             
 call plug#end()
 
@@ -82,7 +83,7 @@ set softtabstop=2 " Number of spaces per Tab
 
 " ********************************** Coc.Nvim
 let g:coc_node_path = '/home/mmrza/.nvm/versions/node/v16.13.0/bin/node' " Nodejs path for coc-nvim
-let g:coc_global_extensions = ['coc-prettier', 'coc-html', 'coc-eslint', 'coc-yaml', 'coc-tsserver', 'coc-json']
+let g:coc_global_extensions = ['coc-prettier', 'coc-html', 'coc-eslint', 'coc-yaml', 'coc-tsserver', 'coc-json', 'coc-explorer', 'coc-tailwindcss']
 set shortmess+=c " " Don't pass messages to ins-completion-menu
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
@@ -125,29 +126,15 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
-
 " ********************************** Coc.Prettier
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 nnoremap <leader>f :CocCommand prettier.formatFile<CR>
 vmap <leader>ff  <Plug>(coc-format-selected)
 nmap <leader>ff  <Plug>(coc-format-selected)
-
+" ********************************** Coc.Explorer
+nmap <leader>nn :CocCommand explorer<CR>
+let g:indentLine_fileTypeExclude = ['coc-explorer']
 " ********************************** NerdTree
-" Mirror the NERDTree before showing it this makes it the same on all tabs
-"nnoremap <leader>n :NERDTreeMirror<CR>:NERDTreeFocus<CR>
-nnoremap <leader>nn :NERDTreeToggle<CR>
-
-" If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
-autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
-    \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
-
-" Close NERDTree when closing the last buffer
-"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-" ********************************** NerdTree Git Status
-let g:NERDTreeGitStatusUseNerdFonts = 1
-"let g:NERDTreeGitStatusWithFlags = 1
-"let g:NERDTreeGitStatusShowClean = 1
 
 " ********************************** Nerd Commenter
 let g:NERDCreateDefaultMappings = 1
@@ -176,6 +163,9 @@ let g:NERDCreateDefaultMappings = 1
 
 "colorscheme uwu
 
+if has('termguicolors')
+  set termguicolors
+endif
 let g:gruvbox_material_background = 'hard'
 let g:gruvbox_material_enable_italic = 1
 let g:gruvbox_material_background = 'hard'
@@ -228,18 +218,19 @@ let g:lightline.subseparator = {
 	\   'left': '', 'right': '' 
   \}
 
+function! MyFiletype()
+  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
+endfunction
+
+function! MyFileformat()
+  return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
+endfunction
+
 " ********************************** Lightline-BufferLine
 let g:lightline#bufferline#enable_devicons=1
 let g:lightline#bufferline#unicode_symbols=1
 let g:lightline#bufferline#icon_position='first'
 let g:lightline#bufferline#unicode_symbols=1
-" Functions for using nerdfont icons in the lightline
-function! MyFiletype()
-  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
-endfunction
-function! MyFileformat()
-  return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
-endfunction
 
 " ********************************** IndentLine Guides
 "let g:indentLine_enabled = 0
