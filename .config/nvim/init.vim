@@ -2,10 +2,11 @@
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
 "Plug 'morhetz/gruvbox'
-Plug 'sainnhe/gruvbox-material'
+"Plug 'sainnhe/gruvbox-material'
 "Plug 'mangeshrex/uwu.vim'
 "Plug 'ayu-theme/ayu-vim'
 "Plug 'arcticicestudio/nord-vim'
+Plug 'projekt0n/github-nvim-theme'
 "Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 "Plug 'ap/vim-buftabline'
 Plug 'mengelbrecht/lightline-bufferline'
@@ -163,15 +164,22 @@ let g:NERDCreateDefaultMappings = 1
 
 "colorscheme uwu
 
-if has('termguicolors')
-  set termguicolors
-endif
-let g:gruvbox_material_background = 'hard'
-let g:gruvbox_material_enable_italic = 1
-let g:gruvbox_material_background = 'hard'
-let g:gruvbox_material_enable_bold = 1
-let g:gruvbox_material_sign_column_background = 'none'
-colorscheme gruvbox-material
+let g:github_sidebars = ["qf", "vista_kind", "terminal", "packer"]
+let g:github_comment_style = "italic"
+let g:github_keyword_style = "italic"
+let g:github_function_style = "italic"
+let g:github_variable_style = "italic"
+colorscheme github_dark_default
+
+"if has('termguicolors')
+  "set termguicolors
+"endif
+"let g:gruvbox_material_background = 'hard'
+"let g:gruvbox_material_enable_italic = 1
+"let g:gruvbox_material_background = 'hard'
+"let g:gruvbox_material_enable_bold = 1
+"let g:gruvbox_material_sign_column_background = 'none'
+"colorscheme gruvbox-material
 
 " ********************************** FZF
 nnoremap <leader>o :Files<CR>
@@ -187,7 +195,7 @@ let g:fzf_action = {
 
 " ********************************** Lightline
 let g:lightline = {
-      \ 'colorscheme': 'gruvbox_material',
+      \ 'colorscheme': 'powerlineish',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'absolutepath', 'modified' ] ]
