@@ -119,6 +119,7 @@ export FZF_DEFAULT_COMMAND="rg --files --follow --hidden -g '!node_modules' -g '
 #export FZF_DEFAULT_COMMAND='rg --files --follow --hidden'
 
 # ALIAS
+alias vi="nvim"
 alias mw="cd ~/Documents/GitHub/Repo"
 alias mnr="systemctl restart NetworkManager"
 alias bclash="brave-browser --proxy-server=127.0.0.1:7890"

@@ -2,16 +2,13 @@
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
 "Plug 'morhetz/gruvbox'
-"Plug 'sainnhe/gruvbox-material'
+Plug 'sainnhe/gruvbox-material'
 "Plug 'mangeshrex/uwu.vim'
 "Plug 'ayu-theme/ayu-vim'
 "Plug 'arcticicestudio/nord-vim'
-Plug 'projekt0n/github-nvim-theme'
-"Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
-"Plug 'ap/vim-buftabline'
+"Plug 'projekt0n/github-nvim-theme'
 Plug 'mengelbrecht/lightline-bufferline'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-"Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-fugitive'
 Plug 'preservim/nerdcommenter'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -19,6 +16,9 @@ Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'ryanoasis/vim-devicons'
+"Plug 'jiangmiao/auto-pairs'
+"Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+"Plug 'ap/vim-buftabline'
 "Plug 'preservim/nerdtree' |
             "\ Plug 'Xuyuanp/nerdtree-git-plugin' |
             "\ Plug 'ryanoasis/vim-devicons'
@@ -84,7 +84,7 @@ set softtabstop=2 " Number of spaces per Tab
 
 " ********************************** Coc.Nvim
 let g:coc_node_path = '/home/mmrza/.nvm/versions/node/v16.13.0/bin/node' " Nodejs path for coc-nvim
-let g:coc_global_extensions = ['coc-prettier', 'coc-html', 'coc-eslint', 'coc-yaml', 'coc-tsserver', 'coc-json', 'coc-explorer', 'coc-tailwindcss']
+let g:coc_global_extensions = ['coc-prettier', 'coc-eslint', 'coc-yaml', 'coc-tsserver', 'coc-json', 'coc-explorer']
 set shortmess+=c " " Don't pass messages to ins-completion-menu
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
@@ -164,22 +164,22 @@ let g:NERDCreateDefaultMappings = 1
 
 "colorscheme uwu
 
-let g:github_sidebars = ["qf", "vista_kind", "terminal", "packer"]
-let g:github_comment_style = "italic"
-let g:github_keyword_style = "italic"
-let g:github_function_style = "italic"
-let g:github_variable_style = "italic"
-colorscheme github_dark_default
+"let g:github_sidebars = ['qf', 'vista_kind', 'terminal', 'packer']
+"let g:github_comment_style = 'italic'
+"let g:github_keyword_style = 'italic'
+"let g:github_function_style = 'italic'
+"let g:github_variable_style = 'italic'
+"colorscheme github_dark_default
 
-"if has('termguicolors')
-  "set termguicolors
-"endif
-"let g:gruvbox_material_background = 'hard'
-"let g:gruvbox_material_enable_italic = 1
-"let g:gruvbox_material_background = 'hard'
-"let g:gruvbox_material_enable_bold = 1
-"let g:gruvbox_material_sign_column_background = 'none'
-"colorscheme gruvbox-material
+if has('termguicolors')
+  set termguicolors
+endif
+let g:gruvbox_material_background = 'hard'
+let g:gruvbox_material_enable_italic = 1
+let g:gruvbox_material_background = 'hard'
+let g:gruvbox_material_enable_bold = 1
+let g:gruvbox_material_sign_column_background = 'none'
+colorscheme gruvbox-material
 
 " ********************************** FZF
 nnoremap <leader>o :Files<CR>
@@ -195,7 +195,7 @@ let g:fzf_action = {
 
 " ********************************** Lightline
 let g:lightline = {
-      \ 'colorscheme': 'powerlineish',
+      \ 'colorscheme': 'gruvbox_material',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'absolutepath', 'modified' ] ]
