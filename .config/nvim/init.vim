@@ -2,10 +2,10 @@
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
 "Plug 'morhetz/gruvbox'
-Plug 'sainnhe/gruvbox-material'
+"Plug 'sainnhe/gruvbox-material'
 "Plug 'mangeshrex/uwu.vim'
 "Plug 'ayu-theme/ayu-vim'
-"Plug 'arcticicestudio/nord-vim'
+Plug 'arcticicestudio/nord-vim'
 "Plug 'projekt0n/github-nvim-theme'
 Plug 'mengelbrecht/lightline-bufferline'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -141,6 +141,8 @@ let g:indentLine_fileTypeExclude = ['coc-explorer']
 let g:NERDCreateDefaultMappings = 1
 
 " ********************************** ColorSchemes
+
+" ********** Gruvbox
 "let g:gruvbox_improved_warnings=1
 "let g:gruvbox_italicize_comments=1
 "let g:gruvbox_underline=1
@@ -148,22 +150,25 @@ let g:NERDCreateDefaultMappings = 1
 "let g:gruvbox_italic=1
 "let g:gruvbox_contrast_dark = 'hard'
 "colorscheme gruvbox
-"autocmd vimenter * ++nested colorscheme gruvbox
 
+" ********** Ayu
 "let ayucolor="dark"
 "colorscheme ayu
 
-"let g:nord_italic_comments = 1
-"let g:nord_italic = 1
-"let g:nord_underline = 1
-"let g:nord_bold_vertical_split_line = 1
-"let g:nord_cursor_line_number_background = 1
-"let g:nord_uniform_status_lines = 1
-"let g:nord_uniform_diff_background = 1
-"colorscheme nord
+" ********** Nord
+let g:nord_italic_comments = 1
+let g:nord_italic = 1
+let g:nord_underline = 1
+let g:nord_bold_vertical_split_line = 1
+let g:nord_cursor_line_number_background = 1
+let g:nord_uniform_status_lines = 1
+let g:nord_uniform_diff_background = 1
+colorscheme nord
 
+" ********** UWU
 "colorscheme uwu
 
+" ********** Github
 "let g:github_sidebars = ['qf', 'vista_kind', 'terminal', 'packer']
 "let g:github_comment_style = 'italic'
 "let g:github_keyword_style = 'italic'
@@ -171,15 +176,16 @@ let g:NERDCreateDefaultMappings = 1
 "let g:github_variable_style = 'italic'
 "colorscheme github_dark_default
 
-if has('termguicolors')
-  set termguicolors
-endif
-let g:gruvbox_material_background = 'hard'
-let g:gruvbox_material_enable_italic = 1
-let g:gruvbox_material_background = 'hard'
-let g:gruvbox_material_enable_bold = 1
-let g:gruvbox_material_sign_column_background = 'none'
-colorscheme gruvbox-material
+" ********** Gruvbox_Material
+"if has('termguicolors')
+  "set termguicolors
+"endif
+"let g:gruvbox_material_background = 'hard'
+"let g:gruvbox_material_enable_italic = 1
+"let g:gruvbox_material_background = 'hard'
+"let g:gruvbox_material_enable_bold = 1
+"let g:gruvbox_material_sign_column_background = 'none'
+"colorscheme gruvbox-material
 
 " ********************************** FZF
 nnoremap <leader>o :Files<CR>
@@ -195,7 +201,7 @@ let g:fzf_action = {
 
 " ********************************** Lightline
 let g:lightline = {
-      \ 'colorscheme': 'gruvbox_material',
+      \ 'colorscheme': 'nord',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'absolutepath', 'modified' ] ]
