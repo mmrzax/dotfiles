@@ -1,6 +1,9 @@
+set nocompatible
+
 " ********************************** Plugins
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
+Plug 'sheerun/vim-polyglot'
 "Plug 'morhetz/gruvbox'
 "Plug 'sainnhe/gruvbox-material'
 "Plug 'mangeshrex/uwu.vim'
