@@ -32,37 +32,6 @@ font:
     family: UbuntuMono Nerd Font
     style: Bold Italic
   size: 14
-
-#font:
-  #normal:
-    #family: SauceCodePro Nerd Font
-    #style: Medium
-  #bold:
-    #family: SauceCodePro Nerd Font
-    #style: Bold
-  #italic:
-    #family: SauceCodePro Nerd Font
-    #style: Medium Italic
-  #bold_italic:
-    #family: SauceCodePro Nerd Font
-    #style: Bold Italic
-  #size: 10
-  
-#font:
-  #normal:
-    #family: JetBrainsMono Nerd Font
-    #style: Regular
-  #bold:
-    #family: JetBrainsMono Nerd Font
-    #style: Bold
-  #italic:
-    #family: JetBrainsMono Nerd Font
-    #style: RegularItalic
-  #bold_italic:
-    #family: JetBrainsMono Nerd Font
-    #style: Bold Italic
-  #size: 10
-
   offset:
     x: 0
     y: 0
