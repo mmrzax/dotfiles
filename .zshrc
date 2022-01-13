@@ -128,7 +128,7 @@ alias d="aria2c"
 alias postman="~/Documents/Apps/Postman/Postman"
 alias mmw="cd ~/Documents/task-manager && vi"
 alias jk="musikcube"
-alias chrome="google-chrome-stable --proxy-server=127.0.0.1:7890"
+alias neofetch="neofetch --ascii_distro xubuntu"
 
 # NVM Config
 export NVM_DIR="$HOME/.nvm"
