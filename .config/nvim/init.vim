@@ -3,13 +3,14 @@ set nocompatible
 " ********************************** Plugins
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
-Plug 'sheerun/vim-polyglot'
 "Plug 'morhetz/gruvbox'
-"Plug 'sainnhe/gruvbox-material'
+Plug 'sainnhe/gruvbox-material'
 "Plug 'mangeshrex/uwu.vim'
 "Plug 'ayu-theme/ayu-vim'
-Plug 'arcticicestudio/nord-vim'
+"Plug 'arcticicestudio/nord-vim'
 "Plug 'projekt0n/github-nvim-theme'
+
+Plug 'sheerun/vim-polyglot'
 Plug 'mengelbrecht/lightline-bufferline'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-fugitive'
@@ -159,14 +160,14 @@ let g:NERDCreateDefaultMappings = 1
 "colorscheme ayu
 
 " ********** Nord
-let g:nord_italic_comments = 1
-let g:nord_italic = 1
-let g:nord_underline = 1
-let g:nord_bold_vertical_split_line = 1
-let g:nord_cursor_line_number_background = 1
-let g:nord_uniform_status_lines = 1
-let g:nord_uniform_diff_background = 1
-colorscheme nord
+"let g:nord_italic_comments = 1
+"let g:nord_italic = 1
+"let g:nord_underline = 1
+"let g:nord_bold_vertical_split_line = 1
+"let g:nord_cursor_line_number_background = 1
+"let g:nord_uniform_status_lines = 1
+"let g:nord_uniform_diff_background = 1
+"colorscheme nord
 
 " ********** UWU
 "colorscheme uwu
@@ -180,16 +181,23 @@ colorscheme nord
 "colorscheme github_dark_default
 
 " ********** Gruvbox_Material
-"if has('termguicolors')
-  "set termguicolors
-"endif
-"let g:gruvbox_material_background = 'hard'
-"let g:gruvbox_material_enable_italic = 1
-"let g:gruvbox_material_background = 'hard'
-"let g:gruvbox_material_enable_bold = 1
-"let g:gruvbox_material_sign_column_background = 'none'
-"colorscheme gruvbox-material
+if has('termguicolors')
+  set termguicolors
+endif
+let g:gruvbox_material_background = 'hard'
+let g:gruvbox_material_enable_italic = 1
+let g:gruvbox_material_background = 'hard'
+let g:gruvbox_material_enable_bold = 1
+let g:gruvbox_material_sign_column_background = 'none'
+colorscheme gruvbox-material
 
+
+" *********************************** Fix colors in tmux
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
 " ********************************** FZF
 nnoremap <leader>o :Files<CR>
 nnoremap <leader>b :Buffers<CR>
@@ -204,22 +212,22 @@ let g:fzf_action = {
 
 " ********************************** Lightline
 let g:lightline = {
-      \ 'colorscheme': 'nord',
+      \ 'colorscheme': 'gruvbox_material',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'absolutepath', 'modified' ] ]
+      \             [ 'readonly', 'filename', 'modified' ] ]
       \ },
       \ 'component': {
-      \   'lineinfo': '%3l:%-2v', 
+      \   'lineinfo': '%3l:%-2v',
       \ },
       \ 'component_function': {
-      \   'gitbranch': 'FugitiveHead',
+      \   'mybranch' : 'MyBranch',
       \   'filetype': 'MyFiletype',
       \   'fileformat': 'MyFileformat',
       \ },
       \ 'tabline': {
       \   'left': [ ['buffers'] ],
-      \   'right': [ ['close'] ]
+      \   'right': [ ['mybranch'] ]
       \ },
       \ 'component_expand': {
       \   'buffers': 'lightline#bufferline#buffers'
@@ -234,6 +242,10 @@ let g:lightline.separator = {
 let g:lightline.subseparator = {
 	\   'left': '', 'right': '' 
   \}
+
+function! MyBranch()
+  return FugitiveHead() . ' '
+endfunction
 
 function! MyFiletype()
   return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
