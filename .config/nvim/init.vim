@@ -3,8 +3,8 @@ set nocompatible
 " ********************************** Plugins
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
-"Plug 'morhetz/gruvbox'
-Plug 'sainnhe/gruvbox-material'
+Plug 'morhetz/gruvbox'
+"Plug 'sainnhe/gruvbox-material'
 "Plug 'mangeshrex/uwu.vim'
 "Plug 'ayu-theme/ayu-vim'
 "Plug 'arcticicestudio/nord-vim'
@@ -147,13 +147,12 @@ let g:NERDCreateDefaultMappings = 1
 " ********************************** ColorSchemes
 
 " ********** Gruvbox
-"let g:gruvbox_improved_warnings=1
-"let g:gruvbox_italicize_comments=1
-"let g:gruvbox_underline=1
-"let g:gruvbox_bold=1
-"let g:gruvbox_italic=1
-"let g:gruvbox_contrast_dark = 'hard'
-"colorscheme gruvbox
+let g:gruvbox_italicize_comments=1
+let g:gruvbox_underline=1
+let g:gruvbox_bold=1
+let g:gruvbox_italic=1
+let g:gruvbox_contrast_dark = 'hard'
+colorscheme gruvbox
 
 " ********** Ayu
 "let ayucolor="dark"
@@ -181,15 +180,15 @@ let g:NERDCreateDefaultMappings = 1
 "colorscheme github_dark_default
 
 " ********** Gruvbox_Material
-if has('termguicolors')
-  set termguicolors
-endif
-let g:gruvbox_material_background = 'hard'
-let g:gruvbox_material_enable_italic = 1
-let g:gruvbox_material_background = 'hard'
-let g:gruvbox_material_enable_bold = 1
-let g:gruvbox_material_sign_column_background = 'none'
-colorscheme gruvbox-material
+"if has('termguicolors')
+  "set termguicolors
+"endif
+"let g:gruvbox_material_background = 'hard'
+"let g:gruvbox_material_enable_italic = 1
+"let g:gruvbox_material_background = 'hard'
+"let g:gruvbox_material_enable_bold = 1
+"let g:gruvbox_material_sign_column_background = 'none'
+"colorscheme gruvbox-material
 
 
 " *********************************** Fix colors in tmux
@@ -212,10 +211,10 @@ let g:fzf_action = {
 
 " ********************************** Lightline
 let g:lightline = {
-      \ 'colorscheme': 'gruvbox_material',
+      \ 'colorscheme': 'gruvbox',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'readonly', 'filename', 'modified' ] ]
+      \             [ 'readonly', 'absolutepath', 'modified' ] ]
       \ },
       \ 'component': {
       \   'lineinfo': '%3l:%-2v',
