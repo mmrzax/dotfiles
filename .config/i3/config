@@ -181,6 +181,21 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
+        #mode hide
+        position top
+        #output primary
+        #tray_output none
+        #tray_padding 3
+        #font pango:DejaVu Sans Mono 10
+        font pango:UbuntuMono Nerd Font Bold 12
+        separator_symbol ""
+        
+        # Nord Colors
+        colors {
+                background #2e3440 
+                statusline #8fbcbb 
+                separator #4c566a 
+        }
 }
 
 #for_window [class="^.*"] border pixel 1
