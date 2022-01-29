@@ -182,23 +182,26 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
         #mode hide
-        position top
+        #position top
         #output primary
         #tray_output none
         #tray_padding 3
         #font pango:DejaVu Sans Mono 10
-        font pango:UbuntuMono Nerd Font Bold 12
-        separator_symbol ""
+        font pango:UbuntuMono Nerd Font 12
+        #separator_symbol "  "
+        separator_symbol " "
         
         # Nord Colors
-        colors {
-                background #2e3440 
-                statusline #8fbcbb 
-                separator #4c566a 
-        }
+        #colors {
+                #background #2e3440 
+                #statusline #8fbcbb 
+                #separator #4c566a 
+        #}
 }
 
 #for_window [class="^.*"] border pixel 1
-exec_always --no-startup-id xset r rate 300 80
-exec_always --no-startup-id feh --bg-fill ~/Pictures/Wallpaper/Nordic/josh-hild-hP5LJq61eJM-unsplash.jpg
+exec_always --no-startup-id xset r rate 300 100
+exec_always --no-startup-id feh --bg-fill ~/Pictures/Loving_Walps/wallhaven-l3z3vr.jpg
+exec_always --no-startup-id setxkbmap -model pc104 -layout us,ir -variant ,, -option grp:alt_shift_toggle
+exec_always --no-startup-id xfce4-clipman
 #exec_always --no-startup-id xfsettingsd --sm-client-disable

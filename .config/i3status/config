@@ -33,7 +33,7 @@ volume master {
 }
 order += "tztime mydate"
 tztime mydate {
-        format = " %Y-%m-%d"
+        format = " %Y-%m-%d %a"
 }
 order += "tztime mytime"
 tztime mytime {

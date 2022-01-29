@@ -23,6 +23,6 @@
     "hbs"
   ],
   "explorer.icon.enableNerdfont": "true",
-  "explorer.width": 30,
+  "explorer.width": 25,
   "explorer.file.showHiddenFiles": true
 }

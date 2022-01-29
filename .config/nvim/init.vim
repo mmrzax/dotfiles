@@ -214,7 +214,7 @@ let g:lightline = {
       \ 'colorscheme': 'gruvbox',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'readonly', 'absolutepath', 'modified' ] ]
+      \             [ 'readonly', 'filename', 'modified' ] ]
       \ },
       \ 'component': {
       \   'lineinfo': '%3l:%-2v',
