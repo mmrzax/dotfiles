@@ -88,7 +88,7 @@ set softtabstop=2 " Number of spaces per Tab
 
 " ********************************** Coc.Nvim
 let g:coc_node_path = '/home/mmrza/.nvm/versions/node/v16.13.0/bin/node' " Nodejs path for coc-nvim
-let g:coc_global_extensions = ['coc-prettier', 'coc-eslint', 'coc-yaml', 'coc-tsserver', 'coc-json', 'coc-explorer']
+let g:coc_global_extensions = ['coc-prettier', 'coc-eslint', 'coc-yaml', 'coc-tsserver', 'coc-json', 'coc-explorer', 'coc-html']
 set shortmess+=c " " Don't pass messages to ins-completion-menu
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
