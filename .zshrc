@@ -126,9 +126,11 @@ alias bclash="brave-browser --proxy-server=127.0.0.1:7890"
 alias mongo="~/mongodb/bin/mongod --dbpath=/home/mmrza/mongodb-data"
 alias d="aria2c"
 alias postman="~/Documents/Apps/Postman/Postman"
-alias mmw="cd ~/Documents/task-manager && vi"
 alias jk="musikcube"
 alias neofetch="neofetch --ascii_distro xubuntu"
+alias dev="tmux new -s dev"
+alias ndev="npm run dev"
+alias nbuild="npm run build"
 
 # NVM Config
 export NVM_DIR="$HOME/.nvm"
