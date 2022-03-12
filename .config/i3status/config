@@ -9,6 +9,9 @@
 general {
         colors = true
         interval = 5
+        color_good = "#81a1c1" # Light green
+        color_degraded = "#fafe7c" # Light yellow
+        color_bad = "#ff7770" # Light red
 }
 
 #order += "ipv6"
@@ -22,9 +25,11 @@ order += "memory"
 # My Items
 order += "cpu_usage"
 cpu_usage {
-        format = "﬙ %usage (0:%cpu0 1:%cpu1)"
+        #format = "﬙ %usage (0:%cpu0 1:%cpu1)"
+        format = "﬙ %usage"
         max_threshold = 75
-        format_above_threshold = " %usage (0:%cpu0 1:%cpu1)"
+        #format_above_threshold = " %usage (0:%cpu0 1:%cpu1)"
+        format_above_threshold = " %usage"
 }
 order += "volume master"
 volume master {
@@ -64,7 +69,8 @@ load {
 }
 
 memory {
-        format = " %used / %available"
+        #format = " %used / %available"
+        format = " %used"
         threshold_degraded = "1G"
         format_degraded = "MEMORY < %available"
 }
