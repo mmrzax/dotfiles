@@ -205,8 +205,9 @@ client.background       #242424
 
 #for_window [class="^.*"] border pixel 1
 exec_always --no-startup-id xset r rate 300 100
-exec_always --no-startup-id feh --bg-fill ~/.wallpapers/alena-aenami-girl-window.jpg
+#exec_always --no-startup-id feh --bg-fill ~/.wallpapers/alena-aenami-girl-window.jpg
 exec_always --no-startup-id setxkbmap -model pc104 -layout us,ir -variant ,, -option grp:alt_shift_toggle
 exec_always --no-startup-id xfce4-clipman
 exec_always --no-startup-id ~/polybar-collection/themes/nord/launch.sh &
+exec_always --no-startup-id nitrogen --restore
 #exec_always --no-startup-id xfsettingsd --sm-client-disable
