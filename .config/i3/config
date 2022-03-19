@@ -14,7 +14,7 @@ set $mod Mod4
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 #font pango:monospace 8 This font is widely installed, provides lots of unicode glyphs, right-to-left text rendering and scalability on retina/hidpi displays (thanks to pango). font pango:DejaVu Sans Mono 8
-font pango:JetBrainsMono Nerd Font Bold 9
+font pango:SauceCodePro Nerd Font Bold 10
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -37,7 +37,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+grave exec i3-sensible-terminal
+bindsym $mod+grave exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -210,4 +210,5 @@ exec_always --no-startup-id setxkbmap -model pc104 -layout us,ir -variant ,, -op
 exec_always --no-startup-id xfce4-clipman
 exec_always --no-startup-id ~/polybar-collection/themes/nord/launch.sh &
 exec_always --no-startup-id nitrogen --restore
+exec_always --no-startup-id lxpolkit
 #exec_always --no-startup-id xfsettingsd --sm-client-disable

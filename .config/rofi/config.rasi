@@ -1,6 +1,6 @@
 configuration {
  modi: "window,drun,ssh,combi,run";
  theme: "nord";
- font: "JetBrainsMono Nerd Font 12";
+ font: "SauceCodePro Nerd Font Medium 10";
  combi-modi: "window,drun";
 }

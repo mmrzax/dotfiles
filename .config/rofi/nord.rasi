@@ -8,7 +8,7 @@
 
 configuration {
 
-	font: "JetBrainsMono Nerd Font 10";
+	font: "SauceCodePro Nerd Font Medium 10";
 	width: 30;
 	line-margin: 10;
 	lines: 6;
