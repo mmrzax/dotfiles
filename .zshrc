@@ -125,16 +125,10 @@ export NVM_DIR="$HOME/.nvm"
 # ALIAS
 alias vi="nvim"
 alias mw="cd ~/Documents/GitHub/Repo"
-alias mnr="systemctl restart NetworkManager"
-alias bclash="brave-browser --proxy-server=127.0.0.1:7890"
-alias mongo="~/mongodb/bin/mongod --dbpath=/home/mmrza/mongodb-data"
+alias bchrome="chromium --proxy-server=127.0.0.1:7890"
+alias mongo="mongod --dbpath=/home/mmrza/Documents/Apps/mongodb/mongodb-data"
 alias d="aria2c"
-alias postman="~/Documents/Apps/Postman/Postman"
 alias jk="musikcube"
-alias neofetch="neofetch --ascii_distro xubuntu"
-alias dev="tmux new -s dev"
-alias ndev="npm run dev"
-alias nbuild="npm run build"
 
 # Terminal
 #export TERM="xterm-256color"
