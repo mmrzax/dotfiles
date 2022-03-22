@@ -61,6 +61,7 @@ nnoremap <leader>` :terminal<CR>
 nnoremap <C-s> :w<CR>
 nnoremap <C-c> :bd<CR>
 nnoremap <C-c>jj :bd!<CR>
+vnoremap . :norm.<CR>
 
 " ********************************** Keymaps
 " Paste Keymaps
