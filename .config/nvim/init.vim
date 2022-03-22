@@ -3,11 +3,11 @@ set nocompatible
 " ********************************** Plugins
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
-"Plug 'morhetz/gruvbox'
+Plug 'morhetz/gruvbox'
 "Plug 'sainnhe/gruvbox-material'
 "Plug 'mangeshrex/uwu.vim'
 "Plug 'ayu-theme/ayu-vim'
-Plug 'arcticicestudio/nord-vim'
+"Plug 'arcticicestudio/nord-vim'
 "Plug 'projekt0n/github-nvim-theme'
 
 Plug 'sheerun/vim-polyglot'
@@ -147,26 +147,26 @@ let g:NERDCreateDefaultMappings = 1
 " ********************************** ColorSchemes
 
 " ********** Gruvbox
-"let g:gruvbox_italicize_comments=1
-"let g:gruvbox_underline=1
-"let g:gruvbox_bold=1
-"let g:gruvbox_italic=1
-"let g:gruvbox_contrast_dark = 'hard'
-"colorscheme gruvbox
+let g:gruvbox_italicize_comments=1
+let g:gruvbox_underline=1
+let g:gruvbox_bold=1
+let g:gruvbox_italic=1
+let g:gruvbox_contrast_dark = 'hard'
+colorscheme gruvbox
 
 " ********** Ayu
 "let ayucolor="dark"
 "colorscheme ayu
 
 " ********** Nord
-let g:nord_italic_comments = 1
-let g:nord_italic = 1
-let g:nord_underline = 1
-let g:nord_bold_vertical_split_line = 1
-let g:nord_cursor_line_number_background = 1
-let g:nord_uniform_status_lines = 1
-let g:nord_uniform_diff_background = 1
-colorscheme nord
+"let g:nord_italic_comments = 1
+"let g:nord_italic = 1
+"let g:nord_underline = 1
+"let g:nord_bold_vertical_split_line = 1
+"let g:nord_cursor_line_number_background = 1
+"let g:nord_uniform_status_lines = 1
+"let g:nord_uniform_diff_background = 1
+"colorscheme nord
 
 " ********** UWU
 "colorscheme uwu
@@ -210,7 +210,7 @@ let g:fzf_action = {
 
 " ********************************** Lightline
 let g:lightline = {
-      \ 'colorscheme': 'nord',
+      \ 'colorscheme': 'gruvbox',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'readonly', 'filename', 'modified' ] ]
