@@ -123,7 +123,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # ALIAS
-alias vi="nvim"
 alias mw="cd ~/Documents/GitHub/Repo"
 alias bchrome="chromium --proxy-server=127.0.0.1:7890"
 alias mongo="mongod --dbpath=/home/mmrza/Documents/Apps/mongodb/mongodb-data"
