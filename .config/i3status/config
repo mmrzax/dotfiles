@@ -9,9 +9,9 @@
 general {
         colors = true
         interval = 5
-        color_good = "#81a1c1" # Light green
-        color_degraded = "#fafe7c" # Light yellow
-        color_bad = "#ff7770" # Light red
+        color_good = "#81a1c1"
+        color_degraded = "#fafe7c"
+        color_bad = "#ff7770"
 }
 
 #order += "ipv6"
@@ -20,31 +20,8 @@ general {
 #order += "battery all"
 #order += "disk /"
 #order += "load"
-order += "memory"
+#order += "memory"
 #order += "tztime local"
-# My Items
-order += "cpu_usage"
-cpu_usage {
-        #format = "﬙ %usage (0:%cpu0 1:%cpu1)"
-        format = "﬙ %usage"
-        max_threshold = 75
-        #format_above_threshold = " %usage (0:%cpu0 1:%cpu1)"
-        format_above_threshold = " %usage"
-}
-order += "volume master"
-volume master {
-        format = "墳 %volume"
-        format_muted = "婢 %volume"
-}
-order += "tztime mydate"
-tztime mydate {
-        format = " %Y-%m-%d %a"
-}
-order += "tztime mytime"
-tztime mytime {
-        format = " %H:%M"
-}
-# End Of My Items
 
 wireless _first_ {
         format_up = "W: (%quality at %essid) %ip"
@@ -69,12 +46,43 @@ load {
 }
 
 memory {
-        #format = " %used / %available"
-        format = " %used"
+        format = "%used | %available"
         threshold_degraded = "1G"
         format_degraded = "MEMORY < %available"
 }
 
 tztime local {
         format = "%Y-%m-%d %H:%M:%S"
+}
+
+##### My Configs #####
+order += "cpu_usage"
+order += "memory"
+order += "volume master"
+order += "tztime date"
+order += "tztime time"
+
+cpu_usage {
+        format = " %usage"
+        max_threshold = 75
+        format_above_threshold = " %usage"
+}
+
+memory {
+        format = "  %used"
+        threshold_degraded = "1G"
+        format_degraded = "MEMORY < %available"
+}
+
+volume master {
+        format = "墳 %volume"
+        format_muted = "婢 %volume"
+}
+
+tztime date {
+        format = " %Y-%m-%d %a"
+}
+
+tztime time {
+        format = " %H:%M"
 }
