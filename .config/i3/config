@@ -210,5 +210,5 @@ exec_always --no-startup-id setxkbmap -model pc104 -layout us,ir -variant ,, -op
 exec_always --no-startup-id xfce4-clipman
 #exec_always --no-startup-id ~/polybar-collection/themes/nord/launch.sh &
 exec_always --no-startup-id nitrogen --restore
-exec_always --no-startup-id lxpolkit
+#exec_always --no-startup-id lxpolkit
 #exec_always --no-startup-id xfsettingsd --sm-client-disable
