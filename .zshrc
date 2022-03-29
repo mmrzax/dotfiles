@@ -136,5 +136,8 @@ alias jk="musikcube"
 export FZF_DEFAULT_COMMAND="rg --files --follow --hidden -g '!node_modules' -g '!dist/' -g '!.git'"
 #export FZF_DEFAULT_COMMAND='rg --files --follow --hidden'
 
-# Add nodejs installed with nvm to PATH
+# Define NODE_PATH
 export NODE_PATH=`which node`
+
+# Add golang to PATH
+export PATH=$PATH:/usr/local/go/bin
