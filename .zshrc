@@ -141,9 +141,3 @@ export NODE_PATH=`which node`
 
 # Add golang to PATH
 export PATH=$PATH:/usr/local/go/bin
-
-# Auto open gnome-keyring after login
-if [ -n "$DESKTOP_SESSION" ];then
-    eval $(gnome-keyring-daemon --start)
-    export SSH_AUTH_SOCK
-fi
