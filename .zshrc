@@ -139,5 +139,6 @@ export FZF_DEFAULT_COMMAND="rg --files --follow --hidden -g '!node_modules' -g '
 # Define NODE_PATH
 export NODE_PATH=`which node`
 
-# Add golang to PATH
+# Go Paths
 export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/home/mmrza/go/bin
