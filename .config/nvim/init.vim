@@ -46,7 +46,7 @@ set nowrap " Disable line wrap
 set background=dark
 set cmdheight=1
 set cursorline
-set cursorcolumn
+"set cursorcolumn
 set noshowmode
 set updatetime=50
 set noerrorbells " Disable Beep or flash screen on errors
