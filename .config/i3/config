@@ -175,6 +175,19 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+###############################
+#### Gruvbox Material Dark ####
+###############################
+set $bg       #282828
+set $fg       #d4be98
+set $red      #ea6962
+set $orange   #e78a4e
+set $green    #a9b665
+set $blue     #7daea3
+set $purple   #d3869b
+set $aqua     #89b482
+set $darkgray #282828
+
 bar {
         status_command i3status
         position top
@@ -183,26 +196,48 @@ bar {
         strip_workspace_numbers yes
         separator_symbol " | "
 
-    colors {
-            separator  #2e3440
-            background #1f222d
-            statusline #81a1c1
-            #                  border  background text
-            focused_workspace  #1f222d #1f222d    #81a1c1
-            active_workspace   #1f222d #252936    #5e81ac
-            inactive_workspace #1f222d #1f222d    #4c566a
-            urgent_workspace   #1f222d #1f222d    #ee829f
-            binding_mode       #1f222d #81a1c1    #2e3440
-    }
+    colors { # Gruvbox Material Colors
+            # bar background color
+            background $bg
+            # text color used for blocks that do not have a color specified.
+            statusline $fg
+
+            # workspaces section
+            #                    border     backgr.     text
+            focused_workspace    $orange    $orange     $bg
+            inactive_workspace   $bg        $aqua       $bg
+            active_workspace     $bg        $blue       $bg
+            urgent_workspace     $red       $red        $fg
+     }
+    #colors { # Nord Colors
+            #separator  #2e3440
+            #background #1f222d
+            #statusline #81a1c1
+            ##                  border  background text
+            #focused_workspace  #1f222d #1f222d    #81a1c1
+            #active_workspace   #1f222d #252936    #5e81ac
+            #inactive_workspace #1f222d #1f222d    #4c566a
+            #urgent_workspace   #1f222d #1f222d    #ee829f
+            #binding_mode       #1f222d #81a1c1    #2e3440
+    #}
 }
-# Window color settings
-# class                 border  backgr. text    indicator
-client.focused          #81a1c1 #81a1c1 #ffffff #81a1c1
-client.unfocused        #2e3440 #1f222d #888888 #1f222d
-client.focused_inactive #2e3440 #1f222d #888888 #1f222d
-client.placeholder      #2e3440 #1f222d #888888 #1f222d
-client.urgent           #900000 #900000 #ffffff #900000
-client.background       #242424
+#######################
+#### i3 appearance ####
+#######################
+#       Gruvbox Theme   brdr        bg          text    indictr     chld_brdr
+client.focused          $orange     $orange     $bg     $orange     $orange
+client.focused_inactive $aqua       $aqua       $bg     $aqua       $aqua
+client.unfocused        $bg         $bg         $bg     $bg         $bg
+client.urgent           $red        $red        $bg     $red        $red
+client.placeholder      $bg         $bg         $bg     $bg         $bg
+client.background       $bg
+#      Nord Theme
+#client.focused          #81a1c1 #81a1c1 #ffffff #81a1c1
+#client.unfocused        #2e3440 #1f222d #888888 #1f222d
+#client.focused_inactive #2e3440 #1f222d #888888 #1f222d
+#client.placeholder      #2e3440 #1f222d #888888 #1f222d
+#client.urgent           #900000 #900000 #ffffff #900000
+#client.background       #242424
 
 #for_window [class="^.*"] border pixel 1
 exec_always --no-startup-id xset r rate 300 100
