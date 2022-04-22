@@ -58,6 +58,7 @@ tztime local {
 ##### My Configs #####
 order += "cpu_usage"
 order += "memory"
+order += "battery 0"
 order += "volume master"
 order += "tztime date"
 order += "tztime time"
@@ -72,6 +73,17 @@ memory {
         format = "  %used"
         threshold_degraded = "1G"
         format_degraded = "MEMORY < %available"
+}
+
+battery 0 {
+        format = "%status %percentage %remaining"
+        status_chr = ""
+        status_bat = ""
+        status_unk = "?"
+        status_full = ""
+        low_threshold = 30
+        threshold_type = time
+        path = "/sys/class/power_supply/BAT0/uevent"
 }
 
 volume master {
