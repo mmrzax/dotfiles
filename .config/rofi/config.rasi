@@ -1,6 +1,14 @@
 configuration {
- modi: "window,drun,ssh,combi,run";
- theme: "nord";
- font: "JetBrainsMono Nerd Font Regular 10";
- combi-modi: "window,drun";
+  modi: "window,drun,ssh,combi,run";
+  font: "JetBrainsMono Nerd Font Regular 12";
+  combi-modi: "window,drun";
+  display-ssh:    " ";
+  display-run:    " ";
+  display-drun:   " ";
+  display-window: " ";
+  display-combi:  " ";
+  show-icons:     true;
+
 }
+
+@theme "sidebar"
