@@ -114,11 +114,10 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 # ALIAS
-alias mw="cd ~/Documents/GitHub/Repo"
+alias mw="cd ~/Documents/repo"
 alias bchrome="chromium --proxy-server=127.0.0.1:7890"
 alias mongo="mongod --dbpath=/home/mmrza/Documents/Apps/mongodb/mongodb-data"
 alias d="aria2c"
-alias jk="musikcube"
 
 # Using Ripgrep for listing the files (by using fzf in nvim)
 export FZF_DEFAULT_COMMAND="rg --files --follow --hidden -g '!node_modules' -g '!dist/' -g '!.git'"
