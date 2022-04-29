@@ -7,8 +7,9 @@ call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 "Plug 'sainnhe/gruvbox-material'
 "Plug 'mangeshrex/uwu.vim'
 "Plug 'ayu-theme/ayu-vim'
-Plug 'arcticicestudio/nord-vim'
+"Plug 'arcticicestudio/nord-vim'
 "Plug 'projekt0n/github-nvim-theme'
+Plug 'cocopon/iceberg.vim'
 
 Plug 'sheerun/vim-polyglot'
 Plug 'mengelbrecht/lightline-bufferline'
@@ -161,13 +162,13 @@ let g:NERDCreateDefaultMappings = 1
 
 " ********** Nord
 "let g:nord_italic_comments = 1
-let g:nord_italic = 1
-let g:nord_underline = 1
-let g:nord_bold_vertical_split_line = 1
-let g:nord_cursor_line_number_background = 1
-let g:nord_uniform_status_lines = 1
-let g:nord_uniform_diff_background = 1
-colorscheme nord
+"let g:nord_italic = 1
+"let g:nord_underline = 1
+"let g:nord_bold_vertical_split_line = 1
+"let g:nord_cursor_line_number_background = 1
+"let g:nord_uniform_status_lines = 1
+"let g:nord_uniform_diff_background = 1
+"colorscheme nord
 
 " ********** UWU
 "colorscheme uwu
@@ -190,6 +191,8 @@ colorscheme nord
 "let g:gruvbox_material_sign_column_background = 'none'
 "colorscheme gruvbox-material
 
+" ********* Iceberg
+colorscheme iceberg
 
 " *********************************** Fix colors in tmux
 if exists('+termguicolors')
@@ -211,7 +214,7 @@ let g:fzf_action = {
 
 " ********************************** Lightline
 let g:lightline = {
-      \ 'colorscheme': 'nord',
+      \ 'colorscheme': 'iceberg',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'readonly', 'filename', 'modified' ] ]
