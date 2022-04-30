@@ -1,6 +1,7 @@
 # dotfiles
 My Personal Dotfiles.
 - Alacritty
+- Kitty
 - Neovim
 - Htop
 - Tmux
