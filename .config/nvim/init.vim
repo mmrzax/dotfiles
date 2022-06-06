@@ -3,13 +3,13 @@ set nocompatible
 " ********************************** Plugins
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
-"Plug 'morhetz/gruvbox'
+Plug 'morhetz/gruvbox'
 "Plug 'sainnhe/gruvbox-material'
 "Plug 'mangeshrex/uwu.vim'
 "Plug 'ayu-theme/ayu-vim'
 "Plug 'arcticicestudio/nord-vim'
 "Plug 'projekt0n/github-nvim-theme'
-Plug 'cocopon/iceberg.vim'
+"Plug 'cocopon/iceberg.vim'
 
 Plug 'sheerun/vim-polyglot'
 Plug 'mengelbrecht/lightline-bufferline'
@@ -149,12 +149,12 @@ let g:NERDCreateDefaultMappings = 1
 " ********************************** ColorSchemes
 
 " ********** Gruvbox
-"let g:gruvbox_italicize_comments=1
-"let g:gruvbox_underline=1
-"let g:gruvbox_bold=1
-"let g:gruvbox_italic=1
-"let g:gruvbox_contrast_dark = 'hard'
-"colorscheme gruvbox
+let g:gruvbox_italicize_comments=1
+let g:gruvbox_underline=1
+let g:gruvbox_bold=1
+let g:gruvbox_italic=1
+let g:gruvbox_contrast_dark = 'hard'
+colorscheme gruvbox
 
 " ********** Ayu
 "let ayucolor="dark"
@@ -192,7 +192,7 @@ let g:NERDCreateDefaultMappings = 1
 "colorscheme gruvbox-material
 
 " ********* Iceberg
-colorscheme iceberg
+"colorscheme iceberg
 
 " *********************************** Fix colors in tmux
 if exists('+termguicolors')
@@ -214,7 +214,7 @@ let g:fzf_action = {
 
 " ********************************** Lightline
 let g:lightline = {
-      \ 'colorscheme': 'iceberg',
+      \ 'colorscheme': 'gruvbox',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'readonly', 'filename', 'modified' ] ]
