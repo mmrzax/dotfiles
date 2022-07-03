@@ -3,12 +3,9 @@ set nocompatible
 " ********************************** Plugins
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
-Plug 'morhetz/gruvbox'
-"Plug 'sainnhe/gruvbox-material'
-"Plug 'mangeshrex/uwu.vim'
-"Plug 'ayu-theme/ayu-vim'
+Plug 'sainnhe/everforest'
+"Plug 'morhetz/gruvbox'
 "Plug 'arcticicestudio/nord-vim'
-"Plug 'projekt0n/github-nvim-theme'
 "Plug 'cocopon/iceberg.vim'
 
 Plug 'sheerun/vim-polyglot'
@@ -21,12 +18,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'ryanoasis/vim-devicons'
-"Plug 'jiangmiao/auto-pairs'
-"Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
-"Plug 'ap/vim-buftabline'
-"Plug 'preservim/nerdtree' |
-            "\ Plug 'Xuyuanp/nerdtree-git-plugin' |
-            "\ Plug 'ryanoasis/vim-devicons'
             
 call plug#end()
 
@@ -148,17 +139,26 @@ let g:NERDCreateDefaultMappings = 1
 
 " ********************************** ColorSchemes
 
-" ********** Gruvbox
-let g:gruvbox_italicize_comments=1
-let g:gruvbox_underline=1
-let g:gruvbox_bold=1
-let g:gruvbox_italic=1
-let g:gruvbox_contrast_dark = 'hard'
-colorscheme gruvbox
+" ********** Everforest
+if has('termguicolors')
+  set termguicolors
+endif
+let g:everforest_background = 'hard'
+let g:everforest_enable_italic = 0
+let g:everforest_disable_italic_comment = 0
+let g:everforest_transparent_background = 0 " 0, 1, 2
+let g:everforest_sign_column_background = 'none' " 'none', 'Gray'
+let g:everforest_diagnostic_text_highlight = 0
+let g:everforest_better_performance = 1
+colorscheme everforest
 
-" ********** Ayu
-"let ayucolor="dark"
-"colorscheme ayu
+" ********** Gruvbox
+"let g:gruvbox_italicize_comments=1
+"let g:gruvbox_underline=1
+"let g:gruvbox_bold=1
+"let g:gruvbox_italic=1
+"let g:gruvbox_contrast_dark = 'hard'
+"colorscheme gruvbox
 
 " ********** Nord
 "let g:nord_italic_comments = 1
@@ -169,27 +169,6 @@ colorscheme gruvbox
 "let g:nord_uniform_status_lines = 1
 "let g:nord_uniform_diff_background = 1
 "colorscheme nord
-
-" ********** UWU
-"colorscheme uwu
-
-" ********** Github
-"let g:github_sidebars = ['qf', 'vista_kind', 'terminal', 'packer']
-"let g:github_comment_style = 'italic'
-"let g:github_keyword_style = 'italic'
-"let g:github_function_style = 'italic'
-"let g:github_variable_style = 'italic'
-"colorscheme github_dark_default
-
-" ********** Gruvbox_Material
-"if has('termguicolors')
-  "set termguicolors
-"endif
-"let g:gruvbox_material_background = 'hard'
-"let g:gruvbox_material_enable_italic = 1
-"let g:gruvbox_material_enable_bold = 1
-"let g:gruvbox_material_sign_column_background = 'none'
-"colorscheme gruvbox-material
 
 " ********* Iceberg
 "colorscheme iceberg
@@ -214,7 +193,7 @@ let g:fzf_action = {
 
 " ********************************** Lightline
 let g:lightline = {
-      \ 'colorscheme': 'gruvbox',
+      \ 'colorscheme': 'everforest',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'readonly', 'filename', 'modified' ] ]
