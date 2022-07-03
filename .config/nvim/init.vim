@@ -8,9 +8,9 @@ Plug 'sainnhe/everforest'
 "Plug 'arcticicestudio/nord-vim'
 "Plug 'cocopon/iceberg.vim'
 
-Plug 'sheerun/vim-polyglot'
-Plug 'mengelbrecht/lightline-bufferline'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'mengelbrecht/lightline-bufferline'
 Plug 'tpope/vim-fugitive'
 Plug 'preservim/nerdcommenter'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -258,3 +258,6 @@ if (empty($TMUX))
     set termguicolors
   endif
 endif
+
+" ********************************** Load Config Files
+lua require("arya/treesitter")
