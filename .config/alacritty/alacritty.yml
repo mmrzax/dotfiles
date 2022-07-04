@@ -10,7 +10,7 @@ window:
     #x: 0 #10
     #y: 0 #10
   dynamic_padding: true
-  decorations: full
+  decorations: none #full
   startup_mode: Windowed
   dynamic_title: true
 
@@ -31,7 +31,7 @@ font:
   bold_italic:
     family: UbuntuMono Nerd Font
     style: Bold Italic
-  size: 20
+  size: 13
   offset:
     x: 0
     y: 0
