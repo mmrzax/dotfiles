@@ -80,7 +80,7 @@ set tabstop=2 " Show existing tab with 2 spaces width
 set softtabstop=2 " Number of spaces per Tab
 
 " ********************************** Coc.Nvim
-let g:coc_node_path = '/home/mmrza/.nvm/versions/node/v16.14.2/bin/node' " Nodejs path for coc-nvim
+let g:coc_node_path = '~/.nvm/versions/node/v16.15.1/bin/node' " Nodejs path for coc-nvim
 let g:coc_global_extensions = ['coc-prettier', 'coc-eslint', 'coc-yaml', 'coc-tsserver', 'coc-json', 'coc-explorer', 'coc-html', 'coc-go', 'coc-deno']
 set shortmess+=c " " Don't pass messages to ins-completion-menu
 " Always show the signcolumn, otherwise it would shift the text each time
