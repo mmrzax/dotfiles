@@ -100,12 +100,12 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# NVM CONFIG
+# NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# Alacritty CONFIG
+# ALACRITTY
 fpath+=${ZDOTDIR:-~}/.zsh_functions
 
 # PATH
@@ -114,9 +114,7 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 # ALIAS
-alias mw="cd ~/Documents/repo"
-alias bchrome="chromium --proxy-server=127.0.0.1:7890"
-alias mongo="mongod --dbpath=/home/mmrza/Documents/Apps/mongodb/mongodb-data"
+alias mongo="mongod --dbpath=$HOME/Documents/Apps/mongodb/mongodb-data"
 alias d="aria2c"
 alias myip="curl checkip.dyndns.org"
 
@@ -129,4 +127,4 @@ export NODE_PATH=`which node`
 
 # Go Paths
 export PATH=$PATH:/usr/local/go/bin
-export PATH=$PATH:/home/mmrza/go/bin
+export PATH=$PATH:$HOME/go/bin
