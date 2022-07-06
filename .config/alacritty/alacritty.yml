@@ -31,7 +31,7 @@ font:
   bold_italic:
     family: JetBrainsMono Nerd Font
     style: Bold Italic
-  size: 12 # 14 for UbuntuMono
+  size: 14 # 16 for UbuntuMono
   offset:
     x: 0
     y: 0
