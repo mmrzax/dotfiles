@@ -44,6 +44,19 @@ set updatetime=50
 set noerrorbells " Disable Beep or flash screen on errors
 set visualbell " Use visual bell (no beeping)
 set showtabline=2  " Show tabline
+set shortmess+=c " " Don't pass messages to ins-completion-menu
+set signcolumn=yes
+
+" ********************************** Indent Configuration
+filetype plugin indent on
+set autoindent " Auto-indent new lines
+set smartindent " Enable smart-indent
+set cindent " For new line indent
+set expandtab " Use spaces instead of tabs
+set shiftwidth=2 " When indenting with '>', use 2 spaces width
+set tabstop=2 " Show existing tab with 2 spaces width
+set softtabstop=2 " Number of spaces per Tab
+
 let mapleader = " "
 inoremap jk <ESC>
 tnoremap jk <C-\><C-n> 
@@ -69,28 +82,10 @@ map <leader>l :wincmd l<CR>
 " Moving Between Buffers
 nnoremap <C-l> :bnext<CR>
 nnoremap <C-h> :bprev<CR>
-" ********************************** Indent Configuration
-filetype plugin indent on
-set autoindent " Auto-indent new lines
-set smartindent " Enable smart-indent
-set cindent " For new line indent
-set expandtab " Use spaces instead of tabs
-set shiftwidth=2 " When indenting with '>', use 2 spaces width
-set tabstop=2 " Show existing tab with 2 spaces width
-set softtabstop=2 " Number of spaces per Tab
 
 " ********************************** Coc.Nvim
-let g:coc_node_path = '~/.nvm/versions/node/v16.15.1/bin/node' " Nodejs path for coc-nvim
+let g:coc_node_path = $NODE_PATH
 let g:coc_global_extensions = ['coc-prettier', 'coc-eslint', 'coc-yaml', 'coc-tsserver', 'coc-json', 'coc-explorer', 'coc-html', 'coc-go', 'coc-deno']
-set shortmess+=c " " Don't pass messages to ins-completion-menu
-" Always show the signcolumn, otherwise it would shift the text each time
-" diagnostics appear/become resolved.
-if has("nvim-0.5.0") || has("patch-8.1.1564")
-  " Recently vim can merge signcolumn and number column into one
-  set signcolumn=number
-else
-  set signcolumn=yes
-endif
 " Use tab for trigger completion with characters ahead and navigate
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
