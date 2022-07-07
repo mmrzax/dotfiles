@@ -18,4 +18,5 @@ source ~/.config/nvim/plugin/fzf.vim
 source ~/.config/nvim/plugin/indentline.vim
 
 " Lua Config
+lua require("arya/telescope")
 lua require("arya/treesitter")

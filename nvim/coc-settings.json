@@ -24,5 +24,6 @@
   ],
   "explorer.icon.enableNerdfont": "true",
   "explorer.width": 30,
-  "explorer.file.showHiddenFiles": true
+  "explorer.file.showHiddenFiles": true,
+  "Lua.telemetry.enable": false
 }
