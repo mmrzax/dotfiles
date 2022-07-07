@@ -108,11 +108,6 @@ export NVM_DIR="$HOME/.nvm"
 # ALACRITTY
 fpath+=${ZDOTDIR:-~}/.zsh_functions
 
-# PATH
-if [ -d "$HOME/.local/bin" ] ; then
-    PATH="$HOME/.local/bin:$PATH"
-fi
-
 # ALIAS
 alias mongo="mongod --dbpath=$HOME/Documents/Apps/mongodb/mongodb-data"
 alias d="aria2c"
@@ -120,11 +115,6 @@ alias myip="curl checkip.dyndns.org"
 
 # Using Ripgrep for listing the files (by using fzf in nvim)
 export FZF_DEFAULT_COMMAND="rg --files --follow --hidden -g '!node_modules' -g '!dist/' -g '!.git'"
-#export FZF_DEFAULT_COMMAND='rg --files --follow --hidden'
-#
+
 # Define NODE_PATH
 export NODE_PATH=`which node`
-
-# Go Paths
-export PATH=$PATH:/usr/local/go/bin
-export PATH=$PATH:$HOME/go/bin
