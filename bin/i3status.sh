@@ -3,14 +3,22 @@
 # i3status Brightness Script
 # https://github.com/mmrzax
 
-brightness="/sys/class/backlight/amdgpu_bl0/brightness"
-while IFS= read -r value
+######## Read brightness from "brightnessctl" ########
+i3status | while :
 do
-  value_div=`echo "scale=2 ; $value / 255" | bc`
-  value_percent=`echo "$value_div * 100" | bc`
-  i3status -c $HOME/.config/i3status/config | while :
-  do
-    read line
-    echo " $value_percent% | $line" || exit 1
-  done
-done < "$brightness"
+  read line
+  brightness_percent=`echo "scale=2 ; $(brightnessctl get) / 255 * 100" | bc`
+  echo " $brightness_percent% | $line" || exit 1
+done
+
+####### Read brightness directly from sysfs ########
+#i3status | while :
+#do
+  #read line
+  #brightness="/sys/class/backlight/amdgpu_bl0/brightness"
+  #while IFS= read -r value
+  #do
+    #brightness_percent=`echo "scale=2 ; $value/255*100" | bc`
+  #done < "$brightness"
+  #echo " $brightness_percent% | $line" || exit 1
+#done
