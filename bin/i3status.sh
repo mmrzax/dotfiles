@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# i3status Brightness Script
+# https://github.com/mmrzax
+
 brightness="/sys/class/backlight/amdgpu_bl0/brightness"
 while IFS= read -r value
 do
@@ -11,12 +14,3 @@ do
     echo " $value_percent% | $line" || exit 1
   done
 done < "$brightness"
-
-
-
-#i3status -c $HOME/.config/i3status/config | while :
-#do
-  #read line
-  #echo "mystuff | $line" || exit 1
-#done
-
