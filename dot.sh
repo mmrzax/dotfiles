@@ -8,3 +8,4 @@ cp -r ~/.config/kitty ~/Documents/dotfiles
 cp ~/.tmux.conf ~/Documents/dotfiles;
 cp ~/.zshrc ~/Documents/dotfiles;
 cp ~/.zprofile ~/Documents/dotfiles;
+cp ~/bin/i3status.sh ~/Documents/dotfiles/bin
