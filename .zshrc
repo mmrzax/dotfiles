@@ -116,5 +116,9 @@ alias myip="curl checkip.dyndns.org"
 # Using Ripgrep for listing the files (by using fzf in nvim)
 export FZF_DEFAULT_COMMAND="rg --files --follow --hidden -g '!node_modules' -g '!dist/' -g '!.git'"
 
-# Define NODE_PATH
 export NODE_PATH=`which node`
+export GOPATH="$HOME/go"
+export GOROOT="/usr/local/go"
+
+# PATH
+export PATH="$HOME/bin:$HOME/.local/bin:$GOROOT/bin:$GOPATH/bin:$PATH"
