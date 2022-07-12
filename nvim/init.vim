@@ -20,3 +20,4 @@ source ~/.config/nvim/plugin/indentline.vim
 " Lua Config
 lua require("arya/telescope")
 lua require("arya/treesitter")
+lua require('go').setup()

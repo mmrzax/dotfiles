@@ -1,5 +1,5 @@
 let g:coc_node_path = $NODE_PATH
-let g:coc_global_extensions = ['coc-prettier', 'coc-eslint', 'coc-yaml', 'coc-tsserver', 'coc-json', 'coc-explorer', 'coc-html', 'coc-go', 'coc-deno']
+let g:coc_global_extensions = ['coc-prettier', 'coc-eslint', 'coc-yaml', 'coc-tsserver', 'coc-json', 'coc-explorer', 'coc-html', 'coc-deno']
 " Use tab for trigger completion with characters ahead and navigate
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :

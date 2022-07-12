@@ -11,9 +11,11 @@ Plug 'mengelbrecht/lightline-bufferline'
 Plug 'itchyny/lightline.vim'
 Plug 'ryanoasis/vim-devicons'
 
-" LSP - Linter - Highlight
+" LSP - Linter - Syntax Highlight
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'ray-x/go.nvim'
+Plug 'ray-x/guihua.lua'
 
 
 " Coding Tools
