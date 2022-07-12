@@ -21,7 +21,7 @@ set number " Show line numbers
 set nowrap " Disable line wrap
 set relativenumber
 set cursorline
-"set cursorcolumn
+set cursorcolumn
 
 " Search Set
 set nohlsearch " Disable highlight all search results
@@ -34,7 +34,7 @@ filetype plugin indent on
 set autoindent " Auto-indent new lines
 set smartindent " Enable smart-indent
 set cindent " For new line indent
-set expandtab " Use spaces instead of tabs
-set shiftwidth=2 " When indenting with '>', use 2 spaces width
-set tabstop=2 " Show existing tab with 2 spaces width
-set softtabstop=2 " Number of spaces per Tab
+"set expandtab " Use spaces instead of tabs
+"set shiftwidth=2 " When indenting with '>', use 2 spaces width
+"set tabstop=2 " Show existing tab with 2 spaces width
+"set softtabstop=2 " Number of spaces per Tab
