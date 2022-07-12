@@ -14,7 +14,7 @@ set $mod Mod4
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 #font pango:monospace 10
-font pango:JetBrainsMono Nerd Font 10
+font pango:JetBrainsMono Nerd Font Bold 10
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -109,7 +109,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+bindsym $mod+Shift+a focus child
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -196,6 +196,7 @@ exec_always --no-startup-id xset r rate 300 100
 exec_always --no-startup-id setxkbmap -model pc104 -layout us,ir -variant ,, -option grp:alt_shift_toggle
 exec_always --no-startup-id xfce4-clipman
 exec_always --no-startup-id nitrogen --restore
+exec_always --no-startup-id sleep 1; sh ~/bin/dual_monitor.sh
 #exec_always --no-startup-id lxpolkit
 
 #for_window [class="^.*"] border pixel 0
