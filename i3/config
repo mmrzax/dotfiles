@@ -195,9 +195,9 @@ bar {
 exec_always --no-startup-id xset r rate 300 100
 exec_always --no-startup-id setxkbmap -model pc104 -layout us,ir -variant ,, -option grp:alt_shift_toggle
 exec_always --no-startup-id xfce4-clipman
-exec_always --no-startup-id nitrogen --restore
 exec_always --no-startup-id sleep 1; sh ~/bin/dual_monitor.sh
-#exec_always --no-startup-id lxpolkit
+exec_always --no-startup-id sleep 1; nitrogen --restore
+exec_always --no-startup-id lxpolkit
 
 #for_window [class="^.*"] border pixel 0
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
