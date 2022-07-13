@@ -2,9 +2,9 @@ call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
 " Colorscheme
 Plug 'sainnhe/everforest'
-"Plug 'morhetz/gruvbox'
-"Plug 'arcticicestudio/nord-vim'
-"Plug 'cocopon/iceberg.vim'
+Plug 'morhetz/gruvbox'
+Plug 'arcticicestudio/nord-vim'
+Plug 'cocopon/iceberg.vim'
 
 " Appearance
 Plug 'mengelbrecht/lightline-bufferline'

@@ -35,6 +35,6 @@ set autoindent " Auto-indent new lines
 set smartindent " Enable smart-indent
 set cindent " For new line indent
 "set expandtab " Use spaces instead of tabs
-"set shiftwidth=2 " When indenting with '>', use 2 spaces width
-"set tabstop=2 " Show existing tab with 2 spaces width
+set shiftwidth=4 " When indenting with '>', use 2 spaces width
+set tabstop=4 " Show existing tab with 2 spaces width
 "set softtabstop=2 " Number of spaces per Tab
