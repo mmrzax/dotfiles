@@ -1,2 +1,2 @@
 . "$HOME/.zshrc"
-. "$HOME/.cargo/env"
+#. "$HOME/.cargo/env"

@@ -101,24 +101,26 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # ALACRITTY
-fpath+=${ZDOTDIR:-~}/.zsh_functions
+#fpath+=${ZDOTDIR:-~}/.zsh_functions
 
 # ALIAS
-alias mongo="mongod --dbpath=$HOME/Documents/Apps/mongodb/mongodb-data"
+alias mongo="mongod --dbpath=$HOME/Documents/apps/mongodb/mongodb-data"
 alias d="aria2c"
 alias myip="curl checkip.dyndns.org"
+alias vi="nvim"
 
 # Using Ripgrep for listing the files (by using fzf in nvim)
 export FZF_DEFAULT_COMMAND="rg --files --follow --hidden -g '!node_modules' -g '!dist/' -g '!.git'"
 
 export NODE_PATH=`which node`
 export GOPATH="$HOME/go"
-export GOROOT="/usr/local/go"
+export GOROOT="/usr/lib/go"
+#export GOROOT="/usr/local/go"
 
 # PATH
 export PATH="$HOME/bin:$HOME/.local/bin:$GOROOT/bin:$GOPATH/bin:$PATH"
