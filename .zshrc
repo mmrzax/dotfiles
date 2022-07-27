@@ -117,6 +117,7 @@ alias vi="nvim"
 # Using Ripgrep for listing the files (by using fzf in nvim)
 export FZF_DEFAULT_COMMAND="rg --files --follow --hidden -g '!node_modules' -g '!dist/' -g '!.git'"
 
+export EDITOR=nvim
 export NODE_PATH=`which node`
 export GOPATH="$HOME/go"
 export GOROOT="/usr/lib/go"
@@ -124,3 +125,9 @@ export GOROOT="/usr/lib/go"
 
 # PATH
 export PATH="$HOME/bin:$HOME/.local/bin:$GOROOT/bin:$GOPATH/bin:$PATH"
+
+# pfetch env
+export PF_INFO="ascii title os host kernel uptime pkgs memory shell editor wm"
+export PF_COL1=3
+export PF_COL2=6
+export PF_COL3=1
