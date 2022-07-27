@@ -48,6 +48,9 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+grave exec kitty
 
+# start ranger
+bindsym $mod+u exec "kitty --hold ranger"
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
