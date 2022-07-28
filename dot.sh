@@ -6,7 +6,6 @@ cp -r ~/.config/i3status ~/Documents/dotfiles
 cp -r ~/.config/nvim ~/Documents/dotfiles
 cp -r ~/.config/rofi ~/Documents/dotfiles
 cp -r ~/.config/kitty ~/Documents/dotfiles
-cp ~/.tmux.conf ~/Documents/dotfiles;
-cp ~/.zshrc ~/Documents/dotfiles;
-cp ~/.zprofile ~/Documents/dotfiles;
-cp ~/bin/i3status.sh ~/Documents/dotfiles/bin
+cp ~/.tmux.conf ~/Documents/dotfiles
+cp ~/.zshrc ~/Documents/dotfiles
+cp ~/.xprofile ~/Documents/dotfiles
