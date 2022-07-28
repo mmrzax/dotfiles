@@ -24,6 +24,9 @@ alias d="aria2c"
 alias myip="curl checkip.dyndns.org"
 alias vi="nvim"
 
+# dotfiles
+alias dot="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+
 export EDITOR=nvim
 export NODE_PATH=`which node`
 
